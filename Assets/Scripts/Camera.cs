@@ -9,6 +9,9 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
+
         transform.position = GlobalVariables.ActivePlayer.transform.position + _cammeraOffsetToPlayer;
     }
 }
