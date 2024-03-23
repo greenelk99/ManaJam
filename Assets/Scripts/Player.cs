@@ -37,6 +37,10 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
                 transform.position = GlobalVariables.ActivePlayer.transform.position;
                 GlobalVariables.ActivePlayer = this;
             }
+           if(enabled == false)
+            {
+                _body.velocity = Vector3.zero;
+            }
         }
     }
 

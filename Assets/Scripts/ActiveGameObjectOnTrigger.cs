@@ -9,6 +9,8 @@ public class ActiveGameObjectOnTrigger : MonoBehaviour
 
     [SerializeField] private List<GameObject> _activateObjects;
 
+
+
     private Coroutine _coroutine;
 
     private void OnTriggerEnter(Collider other)
