@@ -44,6 +44,15 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InteractWithSwitch"",
+                    ""type"": ""Button"",
+                    ""id"": ""571e7393-0e31-461b-8e4e-dab858c7cb30"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,6 +121,17 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""action"": ""Switch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""095acc70-cbf0-4371-be3a-d2d34cc9a789"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InteractWithSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +142,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
         m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
         m_PlayerMovement_Switch = m_PlayerMovement.FindAction("Switch", throwIfNotFound: true);
+        m_PlayerMovement_InteractWithSwitch = m_PlayerMovement.FindAction("InteractWithSwitch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,12 +206,14 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     private List<IPlayerMovementActions> m_PlayerMovementActionsCallbackInterfaces = new List<IPlayerMovementActions>();
     private readonly InputAction m_PlayerMovement_Move;
     private readonly InputAction m_PlayerMovement_Switch;
+    private readonly InputAction m_PlayerMovement_InteractWithSwitch;
     public struct PlayerMovementActions
     {
         private @Controlls m_Wrapper;
         public PlayerMovementActions(@Controlls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_PlayerMovement_Move;
         public InputAction @Switch => m_Wrapper.m_PlayerMovement_Switch;
+        public InputAction @InteractWithSwitch => m_Wrapper.m_PlayerMovement_InteractWithSwitch;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -206,6 +229,9 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @Switch.started += instance.OnSwitch;
             @Switch.performed += instance.OnSwitch;
             @Switch.canceled += instance.OnSwitch;
+            @InteractWithSwitch.started += instance.OnInteractWithSwitch;
+            @InteractWithSwitch.performed += instance.OnInteractWithSwitch;
+            @InteractWithSwitch.canceled += instance.OnInteractWithSwitch;
         }
 
         private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -216,6 +242,9 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @Switch.started -= instance.OnSwitch;
             @Switch.performed -= instance.OnSwitch;
             @Switch.canceled -= instance.OnSwitch;
+            @InteractWithSwitch.started -= instance.OnInteractWithSwitch;
+            @InteractWithSwitch.performed -= instance.OnInteractWithSwitch;
+            @InteractWithSwitch.canceled -= instance.OnInteractWithSwitch;
         }
 
         public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -237,5 +266,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnSwitch(InputAction.CallbackContext context);
+        void OnInteractWithSwitch(InputAction.CallbackContext context);
     }
 }

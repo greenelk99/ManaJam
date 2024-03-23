@@ -12,15 +12,14 @@ public class FloorPlates : MonoBehaviour
 
     [SerializeField] private Material _activationMaterial;
     [SerializeField] private Material _deactivatedMaterial;
-    private MeshRenderer _meshRenderer;
+    [SerializeField] private MeshRenderer _meshRenderer;
 
     private void Awake()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
-        Reset();
+        ResetFloorPlate();
     }
 
-    public void Reset()
+    public void ResetFloorPlate()
     {
         _activated = false;
         SetMaterial();

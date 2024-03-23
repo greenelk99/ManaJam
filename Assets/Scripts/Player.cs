@@ -15,6 +15,10 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
 
     private Rigidbody _body;
 
+   [SerializeField] private InteractSwitch _switchNearPlayer;
+
+    public InteractSwitch SwitchNearPlayer { get => _switchNearPlayer; set => _switchNearPlayer = value; }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         
@@ -44,6 +48,16 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
         }
     }
 
+
+    public void OnInteractWithSwitch(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            _switchNearPlayer?.InteractWithSwitch();
+        }
+    }
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -71,4 +85,5 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
         //transform.position = transform.position + _moveSpeed * _moveDirection * Time.deltaTime;
 
     }
+
 }

@@ -41,7 +41,7 @@ public class PathRiddle : Riddle
 
         foreach(FloorPlates floorPlate in _floorPlates)
         {
-            floorPlate.Reset();
+            floorPlate.ResetFloorPlate();
         }
     }
 
