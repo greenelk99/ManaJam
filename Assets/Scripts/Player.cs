@@ -86,4 +86,9 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
 
     }
 
+    private void OnDestroy()
+    {
+        _controller.Dispose();
+        _controller = null;
+    }
 }
