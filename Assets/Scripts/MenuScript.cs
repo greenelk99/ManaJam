@@ -12,7 +12,6 @@ public class MenuScript : MonoBehaviour
 
     public void Exit()
     {
-        Debug.Log("Test");
         Application.Quit();
     }
 }
