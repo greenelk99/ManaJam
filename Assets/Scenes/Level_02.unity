@@ -5439,6 +5439,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1787319154152853509, guid: b0f0be1ac5e8556468b8a01b9a150337,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4581293320369910409, guid: b0f0be1ac5e8556468b8a01b9a150337,
         type: 3}
       propertyPath: m_Name
@@ -6233,6 +6238,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 662128878558743520, guid: bbdb37d542691ff49bead775869d0699,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326382422512855622, guid: bbdb37d542691ff49bead775869d0699,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3731934209299465223, guid: bbdb37d542691ff49bead775869d0699,
         type: 3}
       propertyPath: m_Mesh
@@ -6243,11 +6258,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Switch
       objectReference: {fileID: 0}
+    - target: {fileID: 3865081820225640944, guid: bbdb37d542691ff49bead775869d0699,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864079547245289129, guid: bbdb37d542691ff49bead775869d0699,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5986696828012404892, guid: bbdb37d542691ff49bead775869d0699,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 127889851}
+    - target: {fileID: 7771106115287991917, guid: bbdb37d542691ff49bead775869d0699,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489168492937443820, guid: bbdb37d542691ff49bead775869d0699,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8900108212274219731, guid: bbdb37d542691ff49bead775869d0699,
         type: 3}
       propertyPath: m_Mesh
@@ -16783,7 +16818,7 @@ GameObject:
   - component: {fileID: 8623165204212109276}
   - component: {fileID: 8623165204212109278}
   - component: {fileID: 8623165204212109277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Druckplatte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
