@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_01.unity
     guid: 1e7d90de94b40a24b8641fd12dcd9f8b
   - enabled: 1
-    path: Assets/Scenes/Level_02withDeathplane.unity
+    path: Assets/Scenes/Level_02.unity
     guid: e68a296c8b4a6dc4cbe933739b5ddd0a
   m_configObjects: {}
