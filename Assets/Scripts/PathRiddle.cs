@@ -8,7 +8,9 @@ public class PathRiddle : Riddle
     [SerializeField] private List<FloorPlates> _floorPlates;
     private int _counter;
 
-  [SerializeField]  private GameObject _door;
+    [SerializeField]  private GameObject _door;
+    [SerializeField] private float _doorOpenDurationInSeconds;
+    [SerializeField] private Vector3 _moveDoorByOnOpening;
 
     private void Awake()
     {
@@ -30,10 +32,12 @@ public class PathRiddle : Riddle
     {
         if(_counter >= _floorPlates.Count)
         {
-            _door.SetActive(false);
+            //_door.SetActive(false);
+            StartCoroutine(OpenDoorAnimation(true));
         }
         
     }
+
 
     public override void ResetRiddle()
     {
@@ -44,5 +48,22 @@ public class PathRiddle : Riddle
             floorPlate.ResetFloorPlate();
         }
     }
+    private IEnumerator OpenDoorAnimation(bool open)
+    {
+        int stepAmount = (int)(_doorOpenDurationInSeconds / 0.1f);
+        Vector3 stepValue = _moveDoorByOnOpening / stepAmount;
 
+        if (open == false)
+        {
+            stepValue = stepValue * -1;
+        }
+
+        for (int i = 0; i < stepAmount; i++)
+        {
+          _door.transform.position = _door.transform.position + stepValue;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+
+    }
 }

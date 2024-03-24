@@ -367,4 +367,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _switch: {fileID: 0}
   _doorOpenDurationInSeconds: 2
-  _MoveDoorByOnOpening: {x: 0, y: -5, z: 0}
+  _moveDoorByOnOpening: {x: 0, y: -5, z: 0}
