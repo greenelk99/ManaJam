@@ -10,6 +10,7 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
     private Controlls _controller;
 
     private Vector3 _moveDirection;
+    private Vector3 _lastMoveDirection;
 
     [SerializeField] private float _moveSpeed;
 
@@ -26,6 +27,11 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
 
         _moveDirection = new Vector3( dir.x,0,dir.y);
 
+
+        if(_moveDirection != Vector3.zero )
+        {
+            _lastMoveDirection = _moveDirection;
+        }
     }
 
     public void OnSwitch(InputAction.CallbackContext context)
@@ -83,6 +89,8 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
         _fallspeed = new Vector3(0, _fallspeed.y, 0);
         _body.velocity = _moveDirection * _moveSpeed + _fallspeed;
         //transform.position = transform.position + _moveSpeed * _moveDirection * Time.deltaTime;
+
+       transform.rotation= Quaternion.LookRotation(_lastMoveDirection, Vector3.up);
 
     }
 

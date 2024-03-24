@@ -1304,6 +1304,8 @@ MonoBehaviour:
   - {fileID: 1448182656}
   - {fileID: 1818076276}
   _door: {fileID: 1962578238}
+  _doorOpenDurationInSeconds: 2
+  _moveDoorByOnOpening: {x: 0, y: -5, z: 0}
 --- !u!114 &86504574
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,9 @@ public class SwitchInteractDoor : MonoBehaviour
 
     [SerializeField] private Switch _switch;
 
+    [SerializeField] private float _doorOpenDurationInSeconds;
+    [SerializeField] private Vector3 _moveDoorByOnOpening;
+
     private void Awake()
     {
         _switch.SwitchActivation += OpenDoor;
@@ -15,6 +18,27 @@ public class SwitchInteractDoor : MonoBehaviour
 
     private void OpenDoor(bool active)
     {
-        gameObject.SetActive(!active);
+        //gameObject.SetActive(!active);
+
+        StartCoroutine(OpenDoorAnimation(active));
+    }
+
+    private IEnumerator OpenDoorAnimation(bool open)
+    {
+        int stepAmount = (int)(_doorOpenDurationInSeconds / 0.1f);
+        Vector3 stepValue =_moveDoorByOnOpening/ stepAmount;
+
+        if(open == false)
+        {
+            stepValue = stepValue * -1;
+        }
+
+        for(int i =0; i < stepAmount; i++)
+        {
+            transform.position = transform.position+ stepValue;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+       
     }
 }
