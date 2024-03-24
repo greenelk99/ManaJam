@@ -13162,7 +13162,7 @@ PrefabInstance:
     - target: {fileID: 3412289522233491963, guid: ba61193dc53ae584781b9f363291f6a6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -0.225
       objectReference: {fileID: 0}
     - target: {fileID: 3412289522233491963, guid: ba61193dc53ae584781b9f363291f6a6,
         type: 3}
@@ -13504,6 +13504,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gohst
       objectReference: {fileID: 0}
+    - target: {fileID: 3371120010651475698, guid: 777203fff11d7174caab5737a8826112,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6580984532502097595, guid: 777203fff11d7174caab5737a8826112,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13512,7 +13517,7 @@ PrefabInstance:
     - target: {fileID: 6580984532502097595, guid: 777203fff11d7174caab5737a8826112,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -0.32
       objectReference: {fileID: 0}
     - target: {fileID: 6580984532502097595, guid: 777203fff11d7174caab5737a8826112,
         type: 3}
