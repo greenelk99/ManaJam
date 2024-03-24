@@ -46,6 +46,7 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
 
                 transform.position = GlobalVariables.ActivePlayer.transform.position;
                 GlobalVariables.ActivePlayer = this;
+                SwitchingWorlds.Instance.SwitchWorld();
             }
            if(enabled == false)
             {
@@ -89,8 +90,11 @@ public class Player : MonoBehaviour, Controlls.IPlayerMovementActions
         _fallspeed = new Vector3(0, _fallspeed.y, 0);
         _body.velocity = _moveDirection * _moveSpeed + _fallspeed;
         //transform.position = transform.position + _moveSpeed * _moveDirection * Time.deltaTime;
-
-       transform.rotation= Quaternion.LookRotation(_lastMoveDirection, Vector3.up);
+        if(_lastMoveDirection != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(_lastMoveDirection, Vector3.up);
+        }
+     
 
     }
 
